@@ -5,3 +5,10 @@
 
 > ref: An introduction to inertial navigation, Oliver J. Woodman
 
+# TODO
+- check table cell, make sure the cell value valid;
+- check cpu usage, when second sim plot;
+
+
+# Bug
+- after twice sim plot, when resize the widget, will crash.
