@@ -5,10 +5,10 @@ clc
 %% import data
 addpath('quaternion_library');
 addpath('data');
-% load static.mat
-% load circle1.mat
-% load circle2.mat
-load circle3.mat
+load static_2.mat
+% load circle_11.mat
+% load circle_12.mat
+% load circle_13.mat
 
 time = 0.032* [1:300];
 deg2rad = pi/180;
