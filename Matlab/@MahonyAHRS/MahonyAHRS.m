@@ -13,6 +13,7 @@ classdef MahonyAHRS < handle
         Quaternion = [1 0 0 0];     % output quaternion describing the Earth relative to the sensor
         Kp = 1;                     % algorithm proportional gain
         Ki = 0;                     % algorithm integral gain
+        w_b = [0,0,0];
     end
     
     %% Public properties
@@ -65,6 +66,7 @@ classdef MahonyAHRS < handle
             
             % Apply feedback terms
             Gyroscope = Gyroscope + obj.Kp * e + obj.Ki * obj.eInt;            
+            obj.w_b = -obj.Kp * e - obj.Ki * obj.eInt;
             
             % Compute rate of change of quaternion
             qDot = 0.5 * quaternProd(q, [0 Gyroscope(1) Gyroscope(2) Gyroscope(3)]);
@@ -95,6 +97,7 @@ classdef MahonyAHRS < handle
             
             % Apply feedback terms
             Gyroscope = Gyroscope + obj.Kp * e + obj.Ki * obj.eInt;            
+            obj.w_b = -obj.Kp * e - obj.Ki * obj.eInt;
             
             % Compute rate of change of quaternion
             qDot = 0.5 * quaternProd(q, [0 Gyroscope(1) Gyroscope(2) Gyroscope(3)]);

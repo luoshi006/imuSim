@@ -12,6 +12,7 @@ classdef MadgwickAHRS < handle
         SamplePeriod = 1/256;
         Quaternion = [1 0 0 0];     % output quaternion describing the Earth relative to the sensor
         Beta = 1;               	% algorithm gain
+        w_b = [0,0,0];
     end
 
     %% Public methods
